@@ -1,0 +1,309 @@
+You are a key point extractor specialized on Aeronautical Information Publications. I will give you AD2.12 Runway Physical Characteristics table and want you to convert the whole information into json format.
+0. Only return the JSON data and nothing more.
+1. Always follow the given structure for json.
+2. First look out for each runway(rwy_designator) which is the row identification for the table. Then their properties, which are: True bearing(BRG), magnetic(MAG) bearing(BRG), dimensions of runway(RWY), dimensions of stop-way(SWY), strength(PCN), surface type of runway(RWY), surface type of stop-way(SWY), Threshold(THR) coordinates, Geoid Undulation, THR elevation, highest elevation of touchdown zone(TDZ) of precision approach runway(APP RWY), slope of runway(RWY) and or stop-way(SWY), stop-way(SWY) dimensions, clear-way(CWY) dimensions, strip dimensions, OFZ, remarks
+3. Non-nullable features are; 
+	rwy_designator, 
+	true_brg, 
+	mag_brg, 
+	pcn_surface_rwy_swy, 
+	thr_coord,
+	thr_elev,
+	geo_und_m, 
+	thr_elev,
+	highest_tdz_elev
+4. Null values may be given as 'NIL', 'NULL', 'N/A', 'NA' , ‘-‘ or not given at all. In any case you will record them as 'N/A' in json
+5. Json structure for runways is:
+
+{
+  "runways": [
+    {
+      “rwy_designator”: 
+      “true_brg”: 
+      “mag_brg”: 
+      "dimensions_m": 
+      "pcn_surface_rwy":
+      “pcn_surface_swy”:
+      "thr_coord": 
+      “geo_und_m”:
+      "thr_elev": 
+      "highest_tdz_elev": 
+      “rwy_slope":
+      “swy_slope”: 
+      "swy_dimensions_m": 
+      "cwy_dimensions_m": 
+      “strip_dimensions_m”:
+      “ofc”:
+      "remarks": 
+    },
+    {
+	...
+    }
+  ]
+}
+
+
+
+
+Please convert this into json:
+Označení 
+Designations
+
+RWY
+NR
+
+1
+
+02C
+
+20C
+
+02R
+
+20L
+
+02L
+
+20R
+
+Zeměpisný a 
+magnetický směr
+
+TRUE & MAG BRG
+
+2
+
+025oGEO
+020oMAG
+
+205oGEO
+200oMAG
+
+025oGEO
+020oMAG
+
+205oGEO
+200oMAG
+
+025oGEO
+020oMAG
+
+205oGEO
+200oMAG
+
+Rozměry RWY
+
+Dimensions of RWY
+
+(m)
+
+3
+
+Únosnost (PCN)
+ a povrch RWY a SWY
+
+Strength (PCN)
+ and surface of RWY 
+and SWY
+
+Zeměpisné souřadnice 
+THR
+
+Výška elipsoidu
+
+THR coordinates
+
+Geoid undulation
+
+THR ELEV a nejvyšší ELEV TDZ 
+RWY pro přesné přiblížení
+
+THR elevation and highest 
+elevation of TDZ of precision 
+APP RWY
+
+4
+
+5
+
+6
+
+2000x30
+
+PCN 33/R/B/X/T
+beton/concrete
+
+1315x40
+
+25000 KG (0,70 MPa)
+tráva/grass
+
+1315x40
+
+25000 KG (0,70 MPa)
+tráva/grass
+
+49 01 16,61 N 
+017 26 02,34 E
+
+140,6 ft / 42,9 m
+
+49 02 15,10 N 
+017 26 44,56 E
+
+140,7 ft / 42,9 m
+
+49 01 24,64 N 
+017 26 13,58 E
+
+140,6 ft / 42,9 m
+
+49 02 03,10 N 
+017 26 41,34 E
+
+140,7 ft / 42,9 m
+
+49 01 28,24 N 
+017 26 05,28 E
+
+140,6 ft / 42,9 m
+
+49 02 06,70 N 
+017 26 33,04 E
+
+140,7 ft / 42,9 m
+
+572,8 ft / 174,6 m
+
+580,5 ft / 176,9 m
+
+571,0 ft / 174,0 m
+
+575,6 ft / 175,4 m
+
+571,6 ft / 174,2 m
+
+576,2 ft / 175,6 m
+
+Sklon RWY−SWY
+
+Slope of RWY−SWY
+
+7
+
+REZERVOVÁNO
+RESERVED
+
+Označení 
+Designations
+
+RWY
+NR
+
+02C
+
+20C
+
+02R
+
+20L
+
+02L
+
+20R
+
+Rozměry SWY
+
+Rozměry CWY
+
+SWY dimensions
+
+CWY dimensions
+
+(m)
+
+8
+
+−
+
+−
+
+−
+
+−
+
+−
+
+−
+
+(m)
+
+9
+
+200x290
+
+200x290
+
+60x90
+
+60x90
+
+60x90
+
+60x90
+
+Rozměry vzletového a 
+přistávacího pásu
+
+Strip dimensions
+
+(m)
+
+10
+
+2120x290
+
+1435x90
+
+1435x90
+
+Prostor bez 
+překážek
+
+OFZ
+
+11
+
+−
+
+−
+
+−
+
+−
+
+−
+
+−
+
+Poznámky
+
+Remarks
+
+12
+
+RESA 140 x 120 m
+
+RESA 140 x 120 m
+
+NIL
+
+AMDT 404/22
+
+AD 2−LKKU−8
+1 DEC 22
+
+KUNOVICE
+
+AIP
+CZECH REPUBLIC
